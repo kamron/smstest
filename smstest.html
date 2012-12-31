@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!-- Handmade with love by Adrian -->
+<head>
+	<title> Twilio SMS tester</title>
+	<!-- Countdown code from: http://www.mediacollege.com/internet/javascript/form/limit-characters.html -->
+	<script language="javascript" type="text/javascript">
+	function limitText(limitField, limitCount, limitNum) {
+		if (limitField.value.length > limitNum) {
+			limitField.value = limitField.value.substring(0, limitNum);
+		} else {
+			limitCount.value = limitNum - limitField.value.length;
+		}
+	}
+	</script>
+</head>
+<body>
+	<!--Obviously you want to change the method to GET or POST, depending on which you need -->
+	<!-- Also: make sure action is pointing to the file you're testing -->
+	<form action="http://demo.twilio.com/welcome/sms/" method="POST">
+	  Source number: <input type="text" name="From" value="+15105551234" /><br />
+	  Destination number: <input type="text" name="To" value="+14155551234" /><br />
+	  Message: <textarea type="text" name="Body" maxlength="160" onKeyDown="limitText(this.form.Body,this.form.countdown,160);" onKeyUp="limitText(this.form.Body,this.form.countdown,160);" />This is a text message from a friend. Or stranger. Whatever.</textarea><br />
+	  <font size="1">(Maximum characters: 160)<br>
+	  	You have <input readonly type="text" name="countdown" size="3" value="160"> characters left.</font><br/>
+	  City (of the sending number): <input type="text" name="FromCity" value="Oakland, CA" /><br />
+	  <input type="submit" value="Submit" />
+	</form>
+</body>

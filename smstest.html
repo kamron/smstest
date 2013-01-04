@@ -17,12 +17,35 @@
 	<!--Obviously you want to change the method to GET or POST, depending on which you need -->
 	<!-- Also: make sure action is pointing to the file you're testing -->
 	<form action="http://demo.twilio.com/welcome/sms/" method="POST">
-	  Source number: <input type="text" name="From" value="+15105551234" /><br />
-	  Destination number: <input type="text" name="To" value="+14155551234" /><br />
-	  Message: <textarea type="text" name="Body" maxlength="160" onKeyDown="limitText(this.form.Body,this.form.countdown,160);" onKeyUp="limitText(this.form.Body,this.form.countdown,160);" />This is a text message from a friend. Or stranger. Whatever.</textarea><br />
-	  <font size="1">(Maximum characters: 160)<br>
-	  	You have <input readonly type="text" name="countdown" size="3" value="160"> characters left.</font><br/>
-	  City (of the sending number): <input type="text" name="FromCity" value="Oakland, CA" /><br />
+    <div>
+	  <h3>Mesage:</h3>
+      <div>
+          Source number: <input type="text" name="From" value="+15105551234" /><br />
+    	  Destination number: <input type="text" name="To" value="+14155551234" /><br />
+    	  Message: <textarea type="text" name="Body" maxlength="160" onKeyDown="limitText(this.form.Body,this.form.countdown,160);" onKeyUp="limitText(this.form.Body,this.form.countdown,160);" />This is a text message from a friend. Or stranger. Whatever.</textarea><br />
+    	  <font size="1">(Maximum characters: 160)<br>
+    	  	You have <input readonly type="text" name="countdown" size="3" value="160"> characters left.</font><br/>
+    	  </div>
+      <h3>From number:</h3>
+      <div>
+          City: <input type="text" name="FromCity" value="Oakland" /><br />
+          State: <input type="text" name="FromState" value="CA" /><br />
+          Zip: <input type="text" name="FromZip" maxlength="5" value="94602" /><br />
+          Country: <input type="text" name="FromCountry" value="USA" /><br />
+      </div>
+        <h3>To number:</h3>
+      <div>
+          City: <input type="text" name="ToCity" value="San Francisco" /><br />
+          State: <input type="text" name="ToState" value="CA" /><br />
+          Zip: <input type="text" name="ToZip" maxlength="5" value="94106" /><br />
+          Country: <input type="text" name="ToCountry" value="USA" /><br />
+      </div>
+      <h3>Account:</h3>
+      <div>
+          Account ID: <input type="text" name="AccountSid" value="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" /><br />
+          SmsSid: <input type="text" name="SmsSid" value="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" />
+      </div>
 	  <input type="submit" value="Submit" />
+    </div>
 	</form>
 </body>
